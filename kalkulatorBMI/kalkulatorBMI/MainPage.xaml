@@ -6,9 +6,8 @@
              mc:Ignorable="d" x:Class="kalkulatorBMI.MainPage"
              NavigationPage.HasNavigationBar="False">
 
-    
-    <FlexLayout Direction="Column"
-                Padding="10">
+
+    <StackLayout>
         <StackLayout>
             <Label Text="Kalkulator BMI" Margin="0,0,0,30" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="40"/>
             <StackLayout Margin="0,0,0,40">
@@ -21,10 +20,10 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="Imie: " Grid.Column="0" Grid.Row="0" FontSize="20" HorizontalOptions="Center"/>
-                    <Label Text="Naziwsko: " Grid.Column="0" Grid.Row="1" FontSize="20" HorizontalOptions="Center"/>
-                    <Entry x:Name="imietxt" Grid.Column="1" Grid.Row="0" FontSize="20"/>
-                    <Entry x:Name="nazwiskotxt" Grid.Column="1" Grid.Row="1" FontSize="20"/>
+                    <Label Text="Imie: " Grid.Column="0" Grid.Row="0" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="Naziwsko: " Grid.Column="0" Grid.Row="1" FontSize="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Entry x:Name="imietxt" Grid.Column="1" Grid.Row="0" FontSize="20" HorizontalOptions="Center" WidthRequest="150" VerticalOptions="Center"/>
+                    <Entry x:Name="nazwiskotxt" Grid.Column="1" Grid.Row="1" FontSize="20" HorizontalOptions="Center" WidthRequest="150" VerticalOptions="Center"/>
                 </Grid>
             </StackLayout>
             <StackLayout Padding="10,0">
@@ -69,7 +68,7 @@
                    FontSize="20"
                    />
         </StackLayout>
-        <Button Text="Zapisz" Clicked="Zapisz_Clicked" BackgroundColor="LightBlue" FontSize="25" Margin="10,10" CornerRadius="15"/>
-        <Button Text="Zobacz liste" Clicked="ZobaczListe_Clicked" BackgroundColor="LightBlue" FontSize="25" Margin="10,10" CornerRadius="15"/>
-    </FlexLayout>
+        <Button Text="Zapisz" Clicked="Zapisz_Clicked" BackgroundColor="LightBlue" FontSize="25" Margin="10,5" CornerRadius="15"/>
+    <Button Text="Zobacz liste" Clicked="ZobaczListe_Clicked" BackgroundColor="LightBlue" FontSize="25" Margin="10,5" CornerRadius="15"/>
+    </StackLayout>
 </ContentPage>

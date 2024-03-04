@@ -18,10 +18,10 @@
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Label Text="ID" Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="20"/>
-                            <Label Text="Imie" Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="20"/>
-                            <Label Text="Nazwisko" Grid.Column="2" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="20"/>
-                            <Label Text="BMI" Grid.Column="3" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                            <Label Text="ID" Grid.Column="0" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold"/>
+                            <Label Text="Imie" Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold" />
+                            <Label Text="Nazwisko" Grid.Column="2" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold"/>
+                            <Label Text="BMI" Grid.Column="3" Grid.Row="0" HorizontalOptions="CenterAndExpand" FontSize="20" FontAttributes="Bold"/>
                         </Grid>
                     </StackLayout>
                 </ListView.Header>

@@ -30,7 +30,6 @@ namespace kalkulatorBMI
                 UpdateResults();
             }
         }
-
         public double Bmi
             => Math.Round(Weight / Math.Pow(Height / 100, 2), 2);
 
@@ -48,11 +47,10 @@ namespace kalkulatorBMI
                     return "Masz otyłość";
             }
         }
-
         private void UpdateResults()
         {
             RaisePropertyChanged(nameof(Bmi));
-            RaisePropertyChanged(nameof(Classification));
+            RaisePropertyChanged(nameof(Classification));          
         }
 
         private double NextStep(double value)

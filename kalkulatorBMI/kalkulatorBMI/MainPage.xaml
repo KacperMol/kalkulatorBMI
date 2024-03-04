@@ -2,15 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" x:Class="kalkulatorBMI.MainPage">
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:kalkulatorbmi="clr-namespace:kalkulatorBMI" x:DataType="kalkulatorbmi:MainPageViewModel"
+             mc:Ignorable="d" x:Class="kalkulatorBMI.MainPage"
+             NavigationPage.HasNavigationBar="False">
 
     
     <FlexLayout Direction="Column"
-                JustifyContent="SpaceEvenly"
-                Padding="40">
+                Padding="10">
         <StackLayout>
-            <Label Text="Kalkulator BMI" Margin="0,0,0,100" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="40"/>
+            <Label Text="Kalkulator BMI" Margin="0,0,0,30" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="40"/>
+            <StackLayout Margin="0,0,0,40">
+                <Grid HorizontalOptions="Center" VerticalOptions="Center">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Imie: " Grid.Column="0" Grid.Row="0" FontSize="20" HorizontalOptions="Center"/>
+                    <Label Text="Naziwsko: " Grid.Column="0" Grid.Row="1" FontSize="20" HorizontalOptions="Center"/>
+                    <Entry x:Name="imietxt" Grid.Column="1" Grid.Row="0" FontSize="20"/>
+                    <Entry x:Name="nazwiskotxt" Grid.Column="1" Grid.Row="1" FontSize="20"/>
+                </Grid>
+            </StackLayout>
+            <StackLayout Padding="10,0">
             <Label Text="Ile masz wzrostu ?" FontSize="20"
                     HorizontalOptions="Center"/>
             <Label Text="{Binding Source={x:Reference HeightSlider},
@@ -19,11 +36,13 @@
                    HorizontalOptions="Center" FontSize="30" TextColor="Blue" FontAttributes="Bold"
                    />
             <Slider x:Name="HeightSlider"
-                    Maximum="220"
-                    Minimum="40"
+                    Maximum="205"
+                    Minimum="100"
                     Value="{Binding Height}" ThumbColor="Green" MaximumTrackColor="Red" MinimumTrackColor="Blue"/>
+                
+            </StackLayout>
         </StackLayout>
-        <StackLayout>
+        <StackLayout Padding="10,10">
             <Label Text="Ile ważysz ?" FontSize="20"
                     HorizontalOptions="Center"/>
             <Label Text="{Binding Source={x:Reference WeightSlider},
@@ -32,16 +51,16 @@
                    HorizontalOptions="Center" FontSize="30" TextColor="Blue" FontAttributes="Bold"
                    />
             <Slider x:Name="WeightSlider"
-                    Maximum="300"
+                    Maximum="170"
                     Minimum="40"
                     Value="{Binding Weight}" ThumbColor="Green" MaximumTrackColor="Red" MinimumTrackColor="Blue"/>
         </StackLayout>
-        <StackLayout>
+        <StackLayout Padding="10,20">
             <Label Text="Twoje BMI wynosi:"
                    HorizontalOptions="Center"
                    FontSize="20"
                    />
-            <Label Text="{Binding Bmi}"
+            <Label Text="{Binding Bmi}" x:Name="BMI"
                    HorizontalOptions="Center" TextColor="Orange"
                    FontSize="48"
                    />
@@ -50,5 +69,7 @@
                    FontSize="20"
                    />
         </StackLayout>
+        <Button Text="Zapisz" Clicked="Zapisz_Clicked" BackgroundColor="LightBlue" FontSize="25" Margin="10,10" CornerRadius="15"/>
+        <Button Text="Zobacz liste" Clicked="ZobaczListe_Clicked" BackgroundColor="LightBlue" FontSize="25" Margin="10,10" CornerRadius="15"/>
     </FlexLayout>
 </ContentPage>

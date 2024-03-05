@@ -50,7 +50,8 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Button Text="Wróć" Clicked="Wroc_Clicked" VerticalOptions="EndAndExpand" BackgroundColor="LightBlue" FontSize="25" Margin="10,10" CornerRadius="15"/>
-            <Label Text=" esa test karpi 2"/>
+            <Label Text=" esa test"/>
+            <Label Text=" esa test2"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
